@@ -1,0 +1,43 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install  # Adjust based on your stack
+
+      - name: Run Tests
+        run: npm test  # Adjust if needed
+
+  staging_deploy:
+    needs: test
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Staging
+        run: echo "🚀 Deploying to Staging..."
+
+  production_deploy:
+    needs: staging_deploy
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Require Approval for Production
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Production
+        run: echo "🚀 Deploying to Production..."
