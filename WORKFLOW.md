@@ -3,7 +3,7 @@ git checkout dev  # Switch to dev branch
 git pull origin dev  # Ensure it's up to date
 git checkout -b feature/navbar  # Create a new branch for the navbar
 
-# 2️⃣ Build the Navbar, Commit & Push Changes
+# 2️⃣ Build the Navbar, Commit and Push Changes
 git add .  # Stage all changes
 git commit -m "✨ Added responsive navbar"  # Commit changes
 git push -u origin feature/navbar  # Push to GitHub
