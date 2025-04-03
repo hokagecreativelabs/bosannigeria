@@ -1,5 +1,10 @@
-export default function Home() {
+import Hero from '@/components/home/hero'
+import React from 'react'
+
+export default function page() {
   return (
-    <h1 className="">Hello world</h1>
-  );
+    <div>
+      <Hero />
+    </div>
+  )
 }
