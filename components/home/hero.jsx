@@ -14,7 +14,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-white font-playfair text-4xl md:text-5xl font-bold mb-4 leading-[50px]">The Body of Senior Advocates of Nigeria</h1>
+          <h1 className="text-white font-playfair text-4xl md:text-7xl font-bold mb-4">The Body of Senior Advocates of Nigeria</h1>
           <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl">Upholding the highest standards of legal practice and promoting the rule of law in Nigeria since 1975.</p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <motion.div whileHover={{ y: -5 }} whileTap={{ scale: 0.95 }}>
